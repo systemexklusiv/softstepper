@@ -49,12 +49,21 @@ class SendToSoftStep(ButtonElement):
         self.redStateButton = ButtonElement(is_momentary, MESSAGETYPE, BUTTONCHANNEL, self._RED_CC_START + self.buttonNum)
         self.greenStateButton = ButtonElement(is_momentary, MESSAGETYPE, BUTTONCHANNEL, self._GREEN_CC_START + self.buttonNum)           
 
+    def off(self):
+        self.greenOff()
+        self.redOff()
+        
     def redOff(self):
         self.redStateButton._do_send_value(self._LED_OFF,0)
         
     def red(self):
         self.greenOff()
         self.redStateButton._do_send_value(self._LED_ON,0)
+    
+    def orange(self):
+        self.greenOff()
+        self.redOff() 
+        self.greenStateButton._do_send_value(self._LED_ON,0)    
         
     def redFastFlash(self):
         self.greenOff()

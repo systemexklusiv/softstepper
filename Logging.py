@@ -1,6 +1,6 @@
 
 
-debug = False
+debug = True
 info = True
 error = True
 nameOfLogfile = 'SoftStepperLog.log'

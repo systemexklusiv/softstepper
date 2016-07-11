@@ -8,6 +8,7 @@ from Logging import log_info as i
 from Logging import log_error as e
 from _Framework.ControlSurface import ControlSurface
 from LooperControl import LooperControl
+from LiveSetObserver import LiveSetObserver
 from LooperMonitorSettings import  *
 
 from MIDI_Map import *
@@ -27,10 +28,14 @@ class SoftStepper(ControlSurface):
 				looperNameToBeMonitored = assignment[1]
 				self.looperMonitors.append(LooperControl(self, softStepPadNum, looperNameToBeMonitored))
 			
+			self.lso = LiveSetObserver(self, "Looper", self.looperMonitors)
+			
 			i('-----------------------') 	
 			i('initialized SoftStepper by systemexklusiv.net')	
 			i('-----------------------') 
 
-
-
-	  
+	def disconnect(self):
+		l("disconnecting..")
+		ControlSurface.disconnect(self)  
+		for monitor in self.looperMonitors:
+			monitor.offLed()
