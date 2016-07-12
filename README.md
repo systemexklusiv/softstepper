@@ -43,7 +43,9 @@ note that you should turn also the 'track' and 'remote' ins for the Softstep2 as
 Drop a looper into a track and rename the device 'ssl' (this can be configured) as depicted in the screenshot below.
 Note that pad number 0 starts to be solid green?
 When you now click on the multipurpose button of the looper you'd see the LED changing states accordingly.
+
 ![live_ss_2.jpg](https://bitbucket.org/repo/M8b74b/images/4267606010-live_ss_2.jpg)
+
 4. Midimap as usual
 In order to not just monitor the state simply midi-map the a softstep-pad to the multipurpose button of the looper
 
