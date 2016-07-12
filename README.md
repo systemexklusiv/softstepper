@@ -1,6 +1,6 @@
 #SoftStepper#
 
-Script for Ableton Live to dynamically find loopers an monitor their states on the *Softstep2*
+Script for Ableton Live to dynamically find up to 10 loopers and monitor their states on the *Softstep2*
 
 ### about ###
 
