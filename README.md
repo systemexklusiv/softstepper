@@ -46,7 +46,7 @@ Note that the name of the script will be called like the name of the folder you 
 'drival-softstepper-e4f632bcb420' unless you rename the folder 
 
 **3. start Monitoring (quick start)**
-Drop a looper into a track and rename the device 'ssl1' as depicted in the screenshot below.
+Drop a looper into a track and rename the device 'ssl1'.
 Now click on the *metronome* -
 ![reset.jpg](https://bitbucket.org/repo/M8b74b/images/2814138009-reset.jpg)
 Doesn't matter if on or off just the change triggers the scanning for new loopers. 
@@ -54,7 +54,19 @@ Doesn't matter if on or off just the change triggers the scanning for new looper
 
 After scanning all tracks live recognizes the looper with name 'ssl1'and you should see that pad number 0 starts to be solid green?
 When you now click on the multipurpose button of the looper you'd see the LED changing states accordingly.
-![live_ss_2.jpg](https://bitbucket.org/repo/M8b74b/images/4267606010-live_ss_2.jpg)
+
+the follwoing names one can give a looper-device:
+* ssl1 -> pad 0 on softstep2 monitors this looper
+* ssl2 -> pad 0 on softstep2 monitors this looper
+* ssl3 -> pad 0 on softstep2 monitors this looper
+* ssl4 -> pad 0 on softstep2 monitors this looper
+* ssl5 -> pad 0 on softstep2 monitors this looper
+* ssl6 -> pad 0 on softstep2 monitors this looper
+* ssl7 -> pad 0 on softstep2 monitors this looper
+* ssl8 -> pad 0 on softstep2 monitors this looper
+* ssl9 -> pad 0 on softstep2 monitors this looper
+* ssl10 -> pad 0 on softstep2 monitors this looper
+
 
 4. Midimap as usual
 In order to not just monitor the state simply midi-map the a softstep-pad to the multipurpose button of the looper
@@ -70,6 +82,7 @@ If the Looper records: solid red
 If the Looper plays: flashing green
 If the Looper overdubs: flashing red
 
-
-
 ### Remember to turn off internal LED of the softstep in the editor ###
+
+### 'deeper' configuration ###
+
