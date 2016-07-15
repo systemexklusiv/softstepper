@@ -50,9 +50,9 @@ Drop a looper into a track and rename the device 'ssl1' as depicted in the scree
 Now click on the *metronome* -
 ![reset.jpg](https://bitbucket.org/repo/M8b74b/images/2814138009-reset.jpg)
 Doesn't matter if on or off just the change triggers the scanning for new loopers. 
-*Note that this is a workaround as constantly watching out for new loopers would be to much I guess. One would have to attach a lot device, name, track - listeners which I thought could be avoid. The chang of the metronome triggers a quick scan across all devices for new loopers*
+*Note that this is a workaround as constantly watching out for new loopers would be to much I guess. One would have to attach a lot device, name, track - listeners which I thought could be avoid. The change of the metronome triggers a quick scan across all devices for new loopers*
 
-Note that pad number 0 starts to be solid green?
+After scanning all tracks live recognizes the looper with name 'ssl1'and you should see that pad number 0 starts to be solid green?
 When you now click on the multipurpose button of the looper you'd see the LED changing states accordingly.
 ![live_ss_2.jpg](https://bitbucket.org/repo/M8b74b/images/4267606010-live_ss_2.jpg)
 
