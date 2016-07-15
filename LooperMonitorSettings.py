@@ -28,7 +28,7 @@ LOOPERS_TO_BE_MONITORED = [
 
 
 # Set to 'True' if you want a logfile  
-IS_LOGGING_ACTIVE = True
+IS_LOGGING_ACTIVE = False
 
 # set to False if logs should show only info stuff
-DEBUG = True
+DEBUG = False
