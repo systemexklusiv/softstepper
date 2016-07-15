@@ -34,9 +34,13 @@ class LooperControl():
 		
 	def offLed(self):
 		self._stateButton.off()	
-		
+	
+
 	def checkTheseDevices(self, loopers):
-		self.offLed()
+		''' central method to call with looper devices
+			first the current loopers is set to none
+			and in the following new candidates are allocated
+		'''
 		if loopers:
 			candidates = self.getLoopersWithId(loopers)
 			if candidates:
@@ -48,21 +52,33 @@ class LooperControl():
 							i("Setting up monitor for looper with name: " + self.looper_name_to_be_monitored + " for param " + self.P_STATE)
 							self.setupLooperStateListener(param)
 							self.sendInitLED()
-			else:
-				i("There is no looper with name: " + self.looper_name_to_be_monitored + " to be monitored in your liveact!")
+		else:
+			i("There is no looper with name: " + self.looper_name_to_be_monitored + " to be monitored in your liveact!")
+			self.offLed()
+			self.removeLooperStateListener()
+			self.looperToControl = None
 	
 	#led the looper state decide which init light to send
 	def sendInitLED(self):
-		self.looperValueListener()
-		
-				
+		if self.looperToControl:
+			self.looperValueListener()
+		else:
+			self.offLed()	
+			
+	def removeLooperStateListener(self):
+		if self.looperToControl is not None:
+			for param in self.looperToControl._get_parameters():
+						if param.name == self.P_STATE:
+							l(__doc__+ " removing state listener from looper: " + self.looperToControl.name)
+							if param.value_has_listener(self.looperValueListener):
+								param.remove_value_listener(self.looperValueListener)
+									
 	def setupLooperStateListener(self, param):
 		if param is not None:
 			if param.value_has_listener(self.looperValueListener):
 				param.remove_value_listener(self.looperValueListener)
 			param.add_value_listener(self.looperValueListener)	
 			
-		
 	def looperValueListener(self):
 		if self.looperToControl is not None:
 			l(self.__doc__ + " looper value listener is notified of state change with name: " + self.looper_name_to_be_monitored)
@@ -86,7 +102,7 @@ class LooperControl():
 						self._currentLooperState = self.LOPPER_PLAY
 						self._stateButton.greenSlowFlash()
 		else:
-			e(self.__doc__ + "At this point the looperToControl must not be None!")				
+			e(self.__doc__ + "At this point the looperToControl with nae:  must not be None!")				
 				
 	def getLoopersWithId(self, loopers = None):
 		toReturn = []
@@ -97,6 +113,7 @@ class LooperControl():
 			for looper in allLoopers:
 				l(self.__doc__ + "checking name for id :" + looper.name)
 				if looper.name == self.looper_name_to_be_monitored:
+					l(self.__doc__ + "found Looper with Id :" + looper.name)
 					toReturn.append(looper)
 		return toReturn  	
 				
