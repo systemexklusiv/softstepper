@@ -20,24 +20,47 @@ class LiveSetObserver():
 
 		# The listeners to be informed if certain liveset situation occour
 		self._monitors = monitors
-		self._song.add_tracks_listener(self.onTracksChanged)
+		
+		#self._song.add_tracks_listener(self.onTracksChanged)
+		
+		self._song.add_metronome_listener(self.onMetronomeChanged)
 		
 		self.setUpListeners()
 		
+		self.offAllSoftStepLeds()
+		
 		self.init()
 		
+	def offAllSoftStepLeds(self):
+		'''no good idea because not all 10 monitors are active all the time '''
+		pass
+		#for monitor in self._monitors:
+			#monitor.offLed();
+	
 	def init(self):
+		self.offAllSoftStepLeds();
 		tracks = self._controlsurface.song().tracks
 		l(self.__doc__ + " init")
 		for track in tracks:
 			self.checkThisTrack(track)
-
+		#self.setUpListeners()	
+	
+	def removeAllStatListeners(self):
+		for monitor in self._monitors:
+			monitor.removeLooperStateListener;				
+			
 	def addMonitors(self, monitors):
 		self._monitors.append(monitors);
 
 	def onTracksChanged(self):
 		l(self.__doc__ + "changed amount tracks!")
-		self.checkThisTrack(self._song.view.selected_track)
+		#self.checkThisTrack(self._song.view.selected_track)
+		self.init()
+		
+	def onMetronomeChanged(self):
+		i(self.__doc__ + "changed Metronome - checking loopers again!")
+		#self.checkThisTrack(self._song.view.selected_track)
+		self.init()
 	
 	def setUpListeners(self):
 		l(self.__doc__ + "Setting up listeners")
@@ -49,7 +72,7 @@ class LiveSetObserver():
 			
 			for dev in track.devices:
 				if dev.class_display_name == self.originalDevName:
-					l(self.__doc__ + " setting up bname listener for device with name :" + dev.name)
+					l(self.__doc__ + " setting up name listener for device with name :" + dev.name)
 					if dev.name_has_listener(self.looperNameListener):
 						dev.remove_name_listener(self.looperNameListener)
 					dev.add_name_listener(self.looperNameListener)
@@ -60,12 +83,14 @@ class LiveSetObserver():
 		for dev in selTrack.devices:
 			if dev.class_display_name == self.originalDevName:
 				l(self.__doc__ +  " a  looper device added! informing monitor listeners!")
-				self.checkThisTrack(self._song.view.selected_track)
+				#self.checkThisTrack(self._song.view.selected_track)
+				self.init()
 							
 	
 	def looperNameListener(self):
 		l(self.__doc__ + "looper name changed")
-		self.checkThisTrack(self._song.view.selected_track)
+		#self.checkThisTrack(self._song.view.selected_track)
+		self.init()
 	
 	def getAllLoopersOfLiveSet(self):
 		tracks = self._controlsurface.song().tracks
@@ -87,7 +112,7 @@ class LiveSetObserver():
 				devices.append(dev)
 		if devices:
 			self.informMonitorsWithDevices(devices)
-		self.setUpListeners()
+		#self.setUpListeners()
 		
 	
 	def informMonitorsWithDevices(self, devices):	
