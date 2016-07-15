@@ -11,8 +11,6 @@ from LooperControl import LooperControl
 from LiveSetObserver import LiveSetObserver
 from LooperMonitorSettings import  *
 
-from MIDI_Map import *
-
 class SoftStepper(ControlSurface):
 	__doc__ = " Script for SoftStep2 "
 
