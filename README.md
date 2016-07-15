@@ -45,7 +45,7 @@ note that you should turn also the 'track' and 'remote' ins for the Softstep2 as
 Note that the name of the script will be called like the name of the folder you moved to lives remote script folder - thus it'll something like
 'drival-softstepper-e4f632bcb420' unless you rename the folder 
 
-3. start Monitoring (quick start)
+**3. start Monitoring (quick start)**
 Drop a looper into a track and rename the device 'ssl1' as depicted in the screenshot below.
 Now click on the *metronome* -
 ![reset.jpg](https://bitbucket.org/repo/M8b74b/images/2814138009-reset.jpg)
