@@ -55,25 +55,21 @@ Doesn't matter if on or off just the change triggers the scanning for new looper
 After scanning all tracks live recognizes the looper with name 'ssl1'and you should see that pad number 0 starts to be solid green?
 When you now click on the multipurpose button of the looper you'd see the LED changing states accordingly.
 
-the follwoing names one can give a looper-device:
-* ssl1 -> pad 0 on softstep2 monitors this looper
-* ssl2 -> pad 0 on softstep2 monitors this looper
-* ssl3 -> pad 0 on softstep2 monitors this looper
-* ssl4 -> pad 0 on softstep2 monitors this looper
-* ssl5 -> pad 0 on softstep2 monitors this looper
-* ssl6 -> pad 0 on softstep2 monitors this looper
-* ssl7 -> pad 0 on softstep2 monitors this looper
-* ssl8 -> pad 0 on softstep2 monitors this looper
-* ssl9 -> pad 0 on softstep2 monitors this looper
+# one can give a looper-device the follwoing names:
+* ssl1 -> pad 0 on softstep2 monitors this looper 
+* ssl2 -> pad 0 on softstep2 monitors this looper 
+* ssl3 -> pad 0 on softstep2 monitors this looper 
+* ssl4 -> pad 0 on softstep2 monitors this looper 
+* ssl5 -> pad 0 on softstep2 monitors this looper 
+* ssl6 -> pad 0 on softstep2 monitors this looper 
+* ssl7 -> pad 0 on softstep2 monitors this looper 
+* ssl8 -> pad 0 on softstep2 monitors this looper 
+* ssl9 -> pad 0 on softstep2 monitors this looper 
 * ssl10 -> pad 0 on softstep2 monitors this looper
 
-
-4. Midimap as usual
+### Midimap as usual ###
 In order to not just monitor the state simply midi-map the a softstep-pad to the multipurpose button of the looper
 
-5. Configuration
-Not much to configure but if one wants she can turn on Logging which will write to a logfile 
-in the folder of the remotescript. More settings can be found in this file : 'LooperMonitorSettings.py' 
 
 ### LED Feedback ###
 
@@ -85,4 +81,43 @@ If the Looper overdubs: flashing red
 ### Remember to turn off internal LED of the softstep in the editor ###
 
 ### 'deeper' configuration ###
+Not much to configure but if one wants she can turn on Logging which will write to a logfile 
+in the folder of the remotescript. More settings can be found in this file : 'LooperMonitorSettings.py'. It looks like this:
 
+```
+#!python
+#An monitor assignment consists of:
+# a number between 0 and 10 for adressing a LED on the SoftStep2
+#and the name which one has to give a Live looper in order to be monitored
+
+# This is where the assignments happen, each assignment is a tupel 
+# consisting of a pad, where the feedback will be adressed to
+# and a name. The name will be looked up by this scriot for all loopers put into the set.
+# if you rename a looper device in your liveact accordingly, 
+# the looper states will be mirrored on your softstep
+
+# Below is an example where a looper-device named "ssl" will be monitored on the
+# Softstep Pad '1' and anoter looper which will be monitored on pad '5'
+# note that the numbers below are zero-based thus 0 menas pad 1
+LOOPERS_TO_BE_MONITORED = [
+                       [0, "ssl1"]
+                       ,[1, "ssl2"]
+                       ,[2, "ssl3"]
+                       ,[3, "ssl4"]
+                       ,[4, "ssl5"]
+                       ,[5, "ssl6"]
+                       ,[6, "ssl7"]
+                       ,[7, "ssl8"]
+                       ,[8, "ssl9"]
+                       ,[9, "ssl10"]
+                       ]
+
+
+
+# Set to 'True' if you want a logfile  
+IS_LOGGING_ACTIVE = True
+
+# set to False if logs should show only info stuff
+DEBUG = True
+
+```
