@@ -68,7 +68,7 @@ When you now click on the multipurpose button of the looper you'd see the LED ch
 * ssl8 -> pad 8 on softstep2 monitors this looper 
 * ssl9 -> pad 9 on softstep2 monitors this looper 
 * ssl10 -> pad 10 on softstep2 monitors this looper
-**remember to turn metronome on/off in order tom trigger rescanning of new looper names**
+**remember to turn metronome on/off in order to trigger rescanning of new looper names**
 ### Midimap as usual ###
 In order to not just monitor the state simply midi-map the a softstep-pad to the multipurpose button of the looper
 
