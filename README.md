@@ -24,8 +24,7 @@ The *SoftStep2* should be in standalone mode. It might work in hosted mode but i
 The resulting file will be something like 'drival-softstepper-e4f632bcb420.zip'.
 ** -> Unzip the folder**
 ** -> rename the folder** *because Live doesnt like dashes in remotescript names* call the folder 
- and put the resulting folder *softstepper*. 
-in Live s MIDI Remote Scripts directory
+*softstepper* and put the resulting folder in Live s MIDI Remote Scripts directory.
 
 **find it on Windows:**
 in one of the following locations: 
