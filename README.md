@@ -58,16 +58,16 @@ After scanning all tracks live recognizes the looper with name 'ssl1'and you sho
 When you now click on the multipurpose button of the looper you'd see the LED changing states accordingly.
 
 # one can give a looper-device the follwoing names:
-* ssl1 -> pad 0 on softstep2 monitors this looper 
-* ssl2 -> pad 0 on softstep2 monitors this looper 
-* ssl3 -> pad 0 on softstep2 monitors this looper 
-* ssl4 -> pad 0 on softstep2 monitors this looper 
-* ssl5 -> pad 0 on softstep2 monitors this looper 
-* ssl6 -> pad 0 on softstep2 monitors this looper 
-* ssl7 -> pad 0 on softstep2 monitors this looper 
-* ssl8 -> pad 0 on softstep2 monitors this looper 
-* ssl9 -> pad 0 on softstep2 monitors this looper 
-* ssl10 -> pad 0 on softstep2 monitors this looper
+* ssl1 -> pad 1 on softstep2 monitors this looper 
+* ssl2 -> pad 2 on softstep2 monitors this looper 
+* ssl3 -> pad 3 on softstep2 monitors this looper 
+* ssl4 -> pad 4 on softstep2 monitors this looper 
+* ssl5 -> pad 5 on softstep2 monitors this looper 
+* ssl6 -> pad 6 on softstep2 monitors this looper 
+* ssl7 -> pad 7 on softstep2 monitors this looper 
+* ssl8 -> pad 8 on softstep2 monitors this looper 
+* ssl9 -> pad 9 on softstep2 monitors this looper 
+* ssl10 -> pad 10 on softstep2 monitors this looper
 
 ### Midimap as usual ###
 In order to not just monitor the state simply midi-map the a softstep-pad to the multipurpose button of the looper
