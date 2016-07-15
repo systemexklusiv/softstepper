@@ -10,6 +10,9 @@ changes of loopers in Ableton Live liveset and sends midi to the softstep in ord
 
 The script checks the names of looper devices dynamically in the current liveset and when a looper with a name (default) 'ssl1' - 'ssl10' is found, the respective
 pad's LED will monitor loooper states. Thus max. 10 loopers can be monitored max.
+
+there is  o custom setup of the Softstep necessery.
+
 For instance:
 If one drops a looper on a track and hits 'ctrl + r' to rename the device and enters
 'ssl3' the third pad of the Softstep will monitor the states of this looper.
