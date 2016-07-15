@@ -18,9 +18,9 @@ I had some problems to control the looper with the scripting to a satisfactory d
 
 
 ### Installation ###
-0. The *SoftStep2* should be in standalone mode. It might work in hosted mode but i haven't tested it. In the SoftStep Editor turn of any LED Feedback for the pads you'd like to be the monitors for the loopers - as the this ableton script will take care about controlling the LEDs :) 
+The *SoftStep2* should be in standalone mode. It might work in hosted mode but i haven't tested it. In the SoftStep Editor turn of any LED Feedback for the pads you'd like to be the monitors for the loopers - as the this ableton script will take care about controlling the LEDs :) 
 
-1.** download** the file by clicking here lefthand on the navigation on 'Download' (next to the small cloud-icon). In the following screen click on 'download repository'.
+** 1. download the remotescript ** by clicking here lefthand on the navigation on 'Download' (next to the small cloud-icon). In the following screen click on 'download repository'.
 The resulting file will be something like 'drival-softstepper-e4f632bcb420.zip'. Unzip the file and put the resulting folder 
 in Live s MIDI Remote Scripts directory
 
