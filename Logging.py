@@ -11,7 +11,7 @@ nameOfLogfile = "SoftStepperLog.log"
 def log(msg):
 	if not debug:
 		return
-	if not IS_LOGGING_ACTIVE:
+	if IS_LOGGING_ACTIVE == False:
 		return
 	f = open(__file__.replace('.pyc', '.py').replace('Logging.py', nameOfLogfile), 'a')
 	label = "[DEBUG] "
@@ -21,7 +21,7 @@ def log(msg):
 def log_info(msg):
 	if not log_info:
 		return
-	if not IS_LOGGING_ACTIVE:
+	if not IS_LOGGING_ACTIVE == False:
 		return
 	f = open(__file__.replace('.pyc', '.py').replace('Logging.py',nameOfLogfile), 'a')
 	label = "[INFO] "
@@ -31,7 +31,7 @@ def log_info(msg):
 def log_error(msg):
 	if not log_error:
 		return
-	if not IS_LOGGING_ACTIVE:
+	if not IS_LOGGING_ACTIVE == False:
 		return
 	f = open(__file__.replace('.pyc', '.py').replace('Logging.py',nameOfLogfile), 'a')
 	label = "[ERROR] "
@@ -41,7 +41,7 @@ def log_error(msg):
 def log_warning(msg):
 	if not log_error:
 		return
-	if not IS_LOGGING_ACTIVE:
+	if not IS_LOGGING_ACTIVE == False:
 		return
 	f = open(__file__.replace('.pyc', '.py').replace('Logging.py',nameOfLogfile), 'a')
 	label = "[WARNING] "
