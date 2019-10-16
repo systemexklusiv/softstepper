@@ -13,22 +13,23 @@
 # Softstep Pad '1' and anoter looper which will be monitored on pad '5'
 # note that the numbers below are zero-based thus 0 menas pad 1
 LOOPERS_TO_BE_MONITORED = [
-                       [0, "ssl1"]
-                       ,[1, "ssl2"]
-                       ,[2, "ssl3"]
-                       ,[3, "ssl4"]
-                       ,[4, "ssl5"]
-                       ,[5, "ssl6"]
-                       ,[6, "ssl7"]
-                       ,[7, "ssl8"]
-                       ,[8, "ssl9"]
-                       ,[9, "ssl10"]
+                       [9, "ssl10"]
+                       #  [0, "ssl1"]
+                       # ,[1, "ssl2"]
+                       # ,[2, "ssl3"]
+                       # ,[3, "ssl4"]
+                       # ,[4, "ssl5"]
+                       # ,[5, "ssl6"]
+                       # ,[6, "ssl7"]
+                       # ,[7, "ssl8"]
+                       # ,[8, "ssl9"]
+                       # ,[9, "ssl10"]
                        ]
 
 
 
 # Set to 'True' if you want a logfile  
-IS_LOGGING_ACTIVE = True
+IS_LOGGING_ACTIVE = False
 
 # set to False if logs should show only info stuff
-DEBUG = True
+DEBUG = False
