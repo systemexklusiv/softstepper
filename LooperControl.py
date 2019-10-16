@@ -45,9 +45,10 @@ class LooperControl():
 			candidates = self.getLoopersWithId(loopers)
 			if candidates:
 				looperToControl = self.getLooperToControl(candidates)
+				#if looperToControl is not None and hasattr(looperToControl, '_get_parameters'):
 				if looperToControl is not None:
 					self.looperToControl = looperToControl
-					for param in self.looperToControl._get_parameters():
+					for param in self.looperToControl.parameters:
 						if param.name == self.P_STATE:
 							i("Setting up monitor for looper with name: " + self.looper_name_to_be_monitored + " for param " + self.P_STATE)
 							self.setupLooperStateListener(param)
@@ -82,7 +83,7 @@ class LooperControl():
 	def looperValueListener(self):
 		if self.looperToControl is not None:
 			l(self.__doc__ + " looper value listener is notified of state change with name: " + self.looper_name_to_be_monitored)
-			for param in self.looperToControl._get_parameters():
+			for param in self.looperToControl.parameters:
 				if param.name == "State":
 					l("Looper State changed with val: " + str( param.value))
 					
