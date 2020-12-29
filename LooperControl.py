@@ -30,7 +30,7 @@ class LooperControl():
 		
 		# the current loper which is determined with the id
 		self._currentLooperState = self.LOPPER_STOP
-		self.offLed();
+		self.offLed()
 		
 	def offLed(self):
 		self._stateButton.off()	

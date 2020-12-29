@@ -25,7 +25,7 @@ class LiveSetObserver():
 		
 		self._song.add_metronome_listener(self.onMetronomeChanged)
 		
-		self.setUpListeners()
+		# self.setUpListeners()
 		
 		self.offAllSoftStepLeds()
 		
@@ -38,7 +38,7 @@ class LiveSetObserver():
 			#monitor.offLed();
 	
 	def init(self):
-		self.offAllSoftStepLeds();
+		self.offAllSoftStepLeds()
 		tracks = self._controlsurface.song().tracks
 		l(self.__doc__ + " init")
 		for track in tracks:
@@ -50,11 +50,10 @@ class LiveSetObserver():
 			monitor.removeLooperStateListener;				
 			
 	def addMonitors(self, monitors):
-		self._monitors.append(monitors);
+		self._monitors.append(monitors)
 
 	def onTracksChanged(self):
 		l(self.__doc__ + "changed amount tracks!")
-		#self.checkThisTrack(self._song.view.selected_track)
 		self.init()
 		
 	def onMetronomeChanged(self):
@@ -117,7 +116,7 @@ class LiveSetObserver():
 	
 	def informMonitorsWithDevices(self, devices):	
 		for monitor in self._monitors:
-			l(self.__doc__ + " informing " +str(len(self._monitors)) + " monitors ")
+			l(self.__doc__ + " informing " + str(len(self._monitors)) + " monitors ")
 			monitor.checkTheseDevices(devices)
 			
 		

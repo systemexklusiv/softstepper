@@ -13,13 +13,12 @@
 # Softstep Pad '1' and anoter looper which will be monitored on pad '5'
 # note that the numbers below are zero-based thus 0 menas pad 1
 LOOPERS_TO_BE_MONITORED = [
-                       [9, "ssl10"]
                        #  [0, "ssl1"]
                        # ,[1, "ssl2"]
                        # ,[2, "ssl3"]
                        # ,[3, "ssl4"]
-                       # ,[4, "ssl5"]
-                       # ,[5, "ssl6"]
+                       [4, "ssl5"]
+                       #,[5, "ssl6"]
                        # ,[6, "ssl7"]
                        # ,[7, "ssl8"]
                        # ,[8, "ssl9"]
